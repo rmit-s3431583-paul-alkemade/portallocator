@@ -1,0 +1,36 @@
+.masthead {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.form-port{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+.form-port button {
+    margin-top: 5px;
+}
+
+#input_port_one {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#input_port_two {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+#input_student_no {
+    margin-bottom: 10px;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+

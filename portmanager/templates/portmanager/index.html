@@ -1,0 +1,44 @@
+<!--
+    Created by Paul Alkemade, s3431583
+    As part of COSC1179 Network Programming
+
+    Proof of concept as a port allocator
+
+    HTML and CSS adapted from bootstrap examples 07/03/2019
+    http://getbootstrap.com/docs/4.3/examples/sign-in/
+-->
+{% extends 'portmanager/base.html' %}
+{% load static %}
+
+{% block content %}
+<form class="form-port" method="POST">
+    {% csrf_token %}
+
+    <img class="mb-4" src="{% static 'portmanager/img/icon.png' %}" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Port Manager</h1>
+
+    <label for="input_student_no" class="sr-only">Student Number</label>
+    <input type="text" name ="input_student_no" id="input_student_no" class="form-control" placeholder="Student No." required autofocus>
+    
+    <label for="input_port_one" class="sr-only">Port 1</label>
+    <input type="number" name ="input_port_one" id="input_port_one" class="form-control" placeholder="Port 1" required autofocus>
+    
+    <label for="input_port_two" class="sr-only">Port 2</label>
+    <input type="number" name ="input_port_two" id="input_port_two" class="form-control" placeholder="Port 2" required>
+    
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Submit</button>
+</form>
+
+{% if form_data_valid %}
+<div class="alert alert-success">
+Both ports have been allocated to your student number, and have been forwarded for processing
+</div>
+{% else %}
+    <ul class="list-group">
+    {% for error in error_message_list %}
+        <li class="list-group-item list-group-item-danger">{{ error }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}
