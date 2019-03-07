@@ -64,7 +64,8 @@ requests submitted with allocated student numbers. These requests can also be re
 
 ## Miscellaneous Details
 ### Email
-Email is sent from the gmail account portallocator@gmail.com. 
+Email is sent from the gmail account portallocator@gmail.com to itself, in order to change the destination address, simply change line 51 in portmanager/views.py from `['portallocator@gmail.com'],` to `['destination@email.com'],`
+
 ### Credentials
 Please contact s3431583@student.rmit.edu.au for credentials to this account and the admin portal.
 
